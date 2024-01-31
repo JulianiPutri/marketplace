@@ -1,0 +1,74 @@
+:root {
+    --primary-color : #35A29F;
+    --secondary-color : #0d6b6f;
+    --transparent : #55c2be8c;
+
+}
+.bg-teal-transparent{
+    background-color: var(--transparent);
+}
+.jumbotron {
+  background: url("../assets/images/shopping.jpg");
+  padding: 220px 0px;
+  background-size: cover;
+}
+.btn-teal {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+.btn-teal:hover {
+    background-color: #068783;
+}
+.btn-outline-teal {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+.btn-outline-teal:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+.text-teal {
+    color: var(--primary-color);
+}
+.border-teal {
+    border-color: var(--primary-color);
+}
+.bg-teal {
+    background-color: var(--primary-color);
+}
+.link-teal {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: large;
+}
+.bg-dark-teal {
+    background-color: var(--secondary-color);
+}
+
+.main {
+    margin: 0 auto -60px;
+}
+.main .img-responsive {
+    margin-bottom: 30px;
+}
+.in-cart{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.cart-left{
+    width: 20%;
+}
+.cart-middle{
+    width: 50%;
+}
+.history-item {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.order-item {
+    margin-bottom: 5px;
+}
