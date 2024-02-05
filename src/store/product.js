@@ -22,7 +22,7 @@ export default {
         async getProductData({commit}){
             try{
                 
-                const { data } = await axios.get("https://marketplace-1c1e8-default-rtdb.firebaseio.com/products.json")
+                const { data } = await axios.get("https://vintage-marketplace-9a779-default-rtdb.firebaseio.com/products.json")
                 const arr = []
                 for (let key in data){
                     arr.push({id:key, ...data[key]})
@@ -35,7 +35,7 @@ export default {
         async getProductDetail({commit}, payload){
             try{
                 
-                const { data } = await axios.get(`https://marketplace-1c1e8-default-rtdb.firebaseio.com/products/${payload}.json`)
+                const { data } = await axios.get(`https://vintage-marketplace-9a779-default-rtdb.firebaseio.com/products/${payload}.json`)
                     commit("setProductDetail" , data)
             }catch(err){
 

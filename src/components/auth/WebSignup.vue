@@ -116,7 +116,7 @@
   const router = useRouter()
   const modalVisible = ref(false);
   const register = async () => {
-      if (
+    if (
       signupData. password !== signupData.confirmationPassword ||
       signupData. password.length < 8
     ) {

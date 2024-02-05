@@ -56,33 +56,35 @@ export default {
         },
         async placeOrder({ commit, rootState }, payload) {
             try {
-              // Dapatkan data pesanan dari cart
-              const id = Date.now(); 
+                // Dapatkan data pesanan dari cart
+                const id = Date.now(); 
 
-      
-              // Hitung total harga pesanan
-              const totalCartPrice = rootState.cart.carts.reduce(
-                (total, item) => total + 15000 + 20000 + parseInt(item.price),
-                0
-              );
-      
-              // Simpan pesanan ke dalam riwayat pesanan
-              const order = {
-                
-                id: id,
-                username: rootState.auth.userLogin.username,
-                createdAt: Date.now(),
-                userId: rootState.auth.userLogin.userId,
-                totalPrice: totalCartPrice,
-                details : [...payload],
-              };
-      
-              commit("addToOrderHistory", order);
-      
-              commit("resetCart");
+        
+                // Hitung total harga pesanan
+                const totalCartPrice = rootState.cart.carts.reduce(
+                    (total, item) => total + parseInt(item.price),
+                    0
+                );
+        
+                const additionalFees = 15000 + 20000;
+                const totalPrice = totalCartPrice + additionalFees;
+                // Simpan pesanan ke dalam riwayat pesanan
+                const order = {
+                    
+                    id: id,
+                    username: rootState.auth.userLogin.username,
+                    createdAt: Date.now(),
+                    userId: rootState.auth.userLogin.userId,
+                    totalPrice: totalPrice,
+                    details : [...payload],
+                };
+        
+                commit("addToOrderHistory", order);
+        
+                commit("resetCart");
       
             } catch (error) {
-              console.error(error);
+                console.error(error);
             }
         },
     }
